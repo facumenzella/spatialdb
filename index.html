@@ -1,40 +1,67 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css" />
-    <style>
-      #map {width: 500px;height: 400px;background-color: #CCC;}
-    </style>
-<script src="https://maps.googleapis.com/maps/api/js"></script>
-<script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
-<script> function initialize() {
-  var mapCanvas = document.getElementById('map');
-  var mapOptions = {
-    center: new google.maps.LatLng(-34.5678194,-58.4559166),
-                            zoom: 15,
-                            mapTypeId: google.maps.MapTypeId.ROADMAP
-    }
-    var map = new google.maps.Map(mapCanvas, mapOptions);
-    var image = './images/home.png';
-    var marker = new google.maps.Marker({
-      position: {lat: -34.5678194, lng: -58.4559166},
-      map: map,
-      icon: image
-  });
-  var infowindow = new google.maps.InfoWindow({
-      content: '<html><h2>Welcome to my world. My home</h2><h3>Moldes 1625</h3></html>'
-    });
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 
-    marker.addListener('click', function() {
-      infowindow.open(map, marker);
+<head>
+  <title>SpatialDB 2015</title>
+  <meta name="description" content="free website template" />
+  <meta name="keywords" content="enter your keywords here" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=9" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/image_slide.js"></script>
+  <script type="text/javascript" src="js/jquery.easing-sooper.js"></script>
+  <script type="text/javascript" src="js/jquery.sooperfish.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('ul.sf-menu').sooperfish();
     });
-}
-google.maps.event.addDomListener(window, 'load', initialize);
-</script>
+  </script>
 </head>
-  <body>
-    <div id="map"></div>
-<h1>FM Density Map</h1>
-<iframe width="100%" height="520" frameborder="0" src="https://facumenzella.cartodb.com/viz/0a44ef1e-6e99-11e5-a269-0e31c9be1b51/embed_map" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
-  </body>
+
+<body>
+  <div id="main">
+	<div id="dark_container">
+	  <div id="banner">
+	    <div id="welcome">
+	      <h1>Facundo Menzella</h1>
+	    </div><!--close welcome-->
+	    <div id="welcome_slogan">
+	      <h1>Spatial DB, ITBA</h1>
+	    </div><!--close welcome_slogan-->
+        <div id="slideshow">
+		  <ul class="slideshow">
+            <li class="show"><img width="940" height="250" src="images/home_1.png" alt="&quot;History Location, HeatMap&quot;" /></li>
+            <li><img width="940" height="250" src="images/home_2.jpg" alt="&quot;Enter your caption here&quot;" /></li>
+          </ul>
+	    </div><!--close slideshow-->
+	  </div><!--close banner-->
+	</div><!--close dark_container-->
+
+	<div id="menu_container">
+	  <div id="menubar">
+        <ul class="sf-menu" id="nav">
+          <li class="selected"><a href="index.html">Home</a></li>
+          <li><a href="ourwork.html">Team</a>
+		    <ul>
+		      <li><a href="http://martupuri.github.io/spatialdb/">Martín Purita</a></li>
+		      <li><a href="http://bahui80.github.io/spatialdb/">Juan Martín Buireo </a></li>
+			</ul>
+		  </li>
+          <li><a href="testimonials.html">Trabajos</a>
+			<ul>
+          <li><a href="./mapeandoMiBarrio.html">Mapeando mi vecindario</a></li>
+			    <li><a href="./heatMap.html">HeatMap</a></li>
+			    <li><a href="#">TP3</a>
+			  </li>
+			</ul>
+		  </li>
+          <!-- <li><a href="contact.html">Contact Us</a></li> -->
+        </ul>
+      </div><!--close menubar-->
+	</div><!--close menu_container-->
+  </div><!--close main-->
+
+
+</body>
 </html>
